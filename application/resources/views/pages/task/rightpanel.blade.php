@@ -35,17 +35,10 @@
         </div>
         <!--start date-->
         @if(config('visibility.tasks_standard_features'))
-        <div class="x-element" id="task-due-date"><i class="mdi mdi-calendar-clock"></i>
-            <span>{{ cleanLang(__('lang.week')) }}</span>
+        <div class="x-element" id="task-start-date"><i class="mdi mdi-calendar-plus"></i>
+            <span>{{ cleanLang(__('lang.week')) }}:</span>
             @if($task->permission_edit_task)
-            <div mbsc-page class="demo-week-select">
-                <div style="height:100%">
-                <div id="demo-week-select">{{ runtimeDate($task->task_date_start) }}</div>
-                </div>
-            </div>
-            <input type="hidden" name="task_date_start" id="task_date_start">
-            @else
-            <span class="x-highlight">{{ runtimeDate($task->task_date_start) }}</span>
+            <input type="week" name="task_date_start" id="task_date_start" value="{{ $task->week }}">
             @endif
         </div>
         @endif
@@ -414,3 +407,24 @@
             </div>
         </div>
     </div>
+
+<script>
+$(document).on('change','#task_date_start',function(){
+    var week = document.getElementById('task_date_start').value;
+    console.log(week)
+          $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '{{ url('/') }}/tasks/{{$task->task_id}}/update-start-date',
+                type: "POST",
+                data: {week:week},
+                success: function (response) {
+                    console.log(response)
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                   console.log(textStatus, errorThrown);
+                }
+            });
+})
+</script>

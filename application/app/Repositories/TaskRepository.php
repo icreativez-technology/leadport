@@ -60,6 +60,7 @@ class TaskRepository {
             });
         }
 
+        
         //my id
         $myid = auth()->id();
 
@@ -143,6 +144,9 @@ class TaskRepository {
         //default where
         $tasks->whereRaw("1 = 1");
 
+
+      
+
         //filter for active or archived (default to active) - do not use this when a task id has been specified
         if (!is_numeric($id)) {
             if (!request()->filled('filter_show_archived_tasks') && !request()->filled('filter_task_state')) {
@@ -165,7 +169,8 @@ class TaskRepository {
         // if (request('filter_project_type') == 'project') {
         //     $tasks->where('task_projectid', '>', 0);
         // }
-
+          
+        
         //apply filters
         if ($data['apply_filters']) {
 
@@ -193,6 +198,7 @@ class TaskRepository {
             if (request()->filled('filter_task_date_due_start')) {
                 $tasks->whereDate('task_date_due', '>=', request('filter_task_date_due_start'));
             }
+            
 
             //filter: start date (end)
             if (request()->filled('filter_task_date_due_end')) {
@@ -263,7 +269,7 @@ class TaskRepository {
             if (is_array(request('filter_task_priority')) && !empty(array_filter(request('filter_task_priority')))) {
                 $tasks->whereIn('task_priority', request('filter_task_priority'));
             }
-
+            
             //filter assigned
             if (is_array(request('filter_assigned')) && !empty(array_filter(request('filter_assigned')))) {
                 $tasks->whereHas('assigned', function ($query) {
@@ -284,7 +290,10 @@ class TaskRepository {
                     $query->whereIn('tasksassigned_userid', [auth()->id()]);
                 });
             }
+            
         }
+
+        
 
         //custom fields filtering
         if (request('action') == 'search') {
@@ -415,6 +424,11 @@ class TaskRepository {
         $task->task_status = request('task_status');
         $task->task_priority = request('task_priority');
         $task->task_position = $position;
+        $task->type      = request('task_type');
+        $task->from_date = request('from_date');
+        $task->to_date   = request('to_date');
+        $task->from_time = request('from_time');
+        $task->to_time   = request('to_time');
 
         //save and return id
         if ($task->save()) {

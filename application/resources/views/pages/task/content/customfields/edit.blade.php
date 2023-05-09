@@ -11,7 +11,6 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
 <!--heading-->
 <div class="x-heading"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.request_details')) }}</div>
 
-
 <!--Form Data-->
 @if($task)
 <div class="card-show-form-data " id="card-task-organisation">
@@ -142,7 +141,7 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
      <button type="button" class="data-toggle-action-tooltip btn btn-outline-danger btn-circle btn-sm addgoods">
         <i class="mdi mdi-plus"></i>
     </button>
-    </div>    
+    </div>  
          @include('misc.edit-goods')
         <button type="button" class="btn waves-effect waves-light btn-xs btn-default ajax-request"
         data-url="{{ url('tasks/content/'.$task->task_id.'/show-customfields') }}"
@@ -153,6 +152,13 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
             data-url="{{ url('/tasks/content/'.$task->task_id.'/edit-customfields') }}" data-type="form" data-ajax-type="post"
             data-form-id="card-task-organisation">
             {{ cleanLang(__('lang.update')) }}
+        </button>
+        <button type="button" class="btn btn-danger btn-xs ajax-request float-right"
+            data-loading-target="card-tasks-left-panel"
+            data-loading-class="loading-before-centre"
+            data-url="{{ url('/tasks/content/'.$task->task_id.'/sendToDocport') }}" data-type="form" data-ajax-type="post"
+            data-form-id="card-task-organisation">
+            {{ cleanLang(__('lang.send_to_docport')) }}
         </button>
     </div>
 </div>
@@ -170,7 +176,7 @@ var types = ['air','sea','road','rail'];
 for(var i =0; i<=types.length; i++){
   $("#"+types[i]).removeClass('active-transport')
 }
-$("#"+value).toggleClass('active-transport')
+  $("#"+value).toggleClass('active-transport')
 }
 </script>
 

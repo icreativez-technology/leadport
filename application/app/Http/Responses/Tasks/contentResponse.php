@@ -146,6 +146,19 @@ class contentResponse implements Responsable {
             ];
         }
 
+         /** -------------------------------------------------------------------------
+         * send order to docport
+         * -------------------------------------------------------------------------*/
+        if ($type == 'send-order-to-docport') {
+            $html = view('pages/task/content/customfields/edit', compact('task'))->render();
+            $jsondata['notification'] = array('type' => 'success', 'value' => __('lang.order_has_been_sent'));
+            $jsondata['dom_html'][] = [
+                'selector' => '#card-left-panel',
+                'action' => 'replace',
+                'value' => $html,
+            ];
+        }
+
         //ajax response
         return response()->json($jsondata);
 

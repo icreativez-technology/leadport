@@ -70,6 +70,7 @@ use App\Repositories\TimerRepository;
 use App\Repositories\UserRepository;
 use App\Rules\CheckBox;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -271,13 +272,11 @@ class Tasks extends Controller {
 
         //defaults
         $milestones = [];
-
         //get stats before other filters has been applied
         $stats = $this->statsWidget();
 
         //get tasks
         $tasks = $this->taskrepo->search();
-
         //count rows
         $count = $tasks->total();
 
@@ -285,8 +284,8 @@ class Tasks extends Controller {
         $this->processTasks($tasks);
 
         //apply some permissions
-        if ($tasks) {
-            foreach ($tasks as $task) {
+        if ($tasks){
+            foreach($tasks as $task) {
                 $this->applyPermissions($task);
             }
         }
@@ -897,6 +896,70 @@ class Tasks extends Controller {
         return new DestroyResponse($payload);
     }
 
+
+      /**
+     * Send order to docport
+     * @param int $id task id
+     * @return \Illuminate\Http\Response
+     */
+    public function sendToDocport(Request $request,$id)
+    {
+
+        $goods = ($request->goods) ? array_values($request->goods) : null;
+        $orderRequestData['lpcmrparam'] = array(
+            'TransportType'          => $request->task_custom_field_1,
+            'Equipment'              => $request->task_custom_field_2,
+            'LoadType'               => $request->task_custom_field_3,
+            'Quantity'               => $request->task_custom_field_4,
+            'PickupCountryId'        => 1,
+            'PickupCityId'           => 1,
+            'ShipperCountryId'       => 1,
+            'PickupDateTime'         => $request->task_custom_field_7,
+            'PickupAddress'          => $request->task_custom_field_8,
+            'PickupIndex'            => $request->task_custom_field_9,
+            'DeliveryCountryId'      => 2,
+            'DeliveryCityId'         => 2,
+            'ConsigneeCountryId'     => 2,
+            'DeliveryDateTime'       => $request->task_custom_field_12,
+            'DeliveryAddress'        => $request->task_custom_field_13,
+            'DeliveryIndex'          => $request->task_custom_field_14,
+            'IncotermsLocation'      => $request->task_custom_field_15,
+            'UNCode'                 => $request->task_custom_field_16,
+            'TemperatureRange'       => $request->task_custom_field_17,
+            'ADRCarriage'            => ($request->task_custom_field_18 == 'on') ? true : false,
+            'TempSensitive'          => ($request->task_custom_field_19 == 'on') ? true : false,
+            'FargileCarriage'        => ($request->task_custom_field_20 == 'on') ? true : false,
+            'Remarks'                => $request->task_custom_field_21,
+            'TransportPrice'         => $request->task_custom_field_22,
+            'TransitTime'            => $request->task_custom_field_23,
+            'goods'                  => $goods
+        );
+
+
+        $url = "https://livecmr20230427154645.azurewebsites.net/api/ShippingOrder/AddOrderLeadPort";
+        $response = Http::withHeaders(['Content-Type' => 'application/json'])
+        ->withBody(json_encode($orderRequestData), 'application/json')
+        ->post($url);
+        
+        if($response->getStatusCode()  == 201){ 
+            $jsondata['notification'] = array('type' => 'success', 'value' => __('lang.order_has_been_sent'));
+            $tasks = $this->taskrepo->search($id);
+            $task = $tasks->first();
+            $task['sendToDocport'] = true;
+            //package to send to response
+            $payload = [
+                'type' => 'send-order-to-docport',
+                'task' => $task
+            ];
+            //show the form
+            return new contentResponse($payload);
+        }else{
+            $jsondata['notification'] = array('type' => 'error', 'value' => __('lang.order_has_been_failed'));
+            return response()->json($jsondata);
+        }
+
+    }
+
     /**
      * Start a users timer for a given task
      * @param int $id task id
@@ -1123,47 +1186,45 @@ class Tasks extends Controller {
      * @param int $id task id
      * @return null
      */
-    public function updateStartDate($id) {
+      public function updateStartDate($id) {
 
         //get the task
         $tasks = $this->taskrepo->search($id);
         $task = $tasks->first();
 
         //save task_date_due to request so can access it n validation
-        request()->merge(['task_date_due' => $task->task_date_due]);
-
-        //validate
-        $validator = Validator::make(request()->all(), [
-            'task_date_start' => [
-                'bail',
-                'required',
-                'date',
-                function ($attribute, $value, $fail) {
-                    if (request('task_date_due') != '') {
-                        if (strtotime($value) > strtotime(request('task_date_due'))) {
-                            return $fail(__('lang.start_date_must_be_before_due_date'));
-                        }
-                    }
-                },
-            ],
-        ]);
-
-        //validation errors
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $messages = '';
-            foreach ($errors->all() as $message) {
-                $messages .= "<li>$message</li>";
-            }
-            return new UpdateErrorResponse([
-                'reset_target' => '#task-start-date-container',
-                'reset_value' => runtimeDate($task->task_date_start),
-                'error_message' => $messages,
-            ]);
-        }
+        // request()->merge(['task_date_due' => $task->task_date_due]);
+        // //validate
+        // $validator = Validator::make(request()->all(), [
+        //     'task_date_start' => [
+        //         'bail',
+        //         'required',
+        //         'date',
+        //         function ($attribute, $value, $fail) {
+        //             if (request('task_date_due') != '') {
+        //                 if (strtotime($value) > strtotime(request('task_date_due'))) {
+        //                     return $fail(__('lang.start_date_must_be_before_due_date'));
+        //                 }
+        //             }
+        //         },
+        //     ],
+        // ]);
+        // //validation errors
+        // if ($validator->fails()) {
+        //     $errors = $validator->errors();
+        //     $messages = '';
+        //     foreach ($errors->all() as $message) {
+        //         $messages .= "<li>$message</li>";
+        //     }
+        //     return new UpdateErrorResponse([
+        //         'reset_target' => '#task-start-date-container',
+        //         'reset_value' => runtimeDate($task->task_date_start),
+        //         'error_message' => $messages,
+        //     ]);
+        // }
 
         //update
-        $task->task_date_start = request('task_date_start');
+        $task->week = request('week');
         $task->save();
 
         //update and apply permissions
@@ -1185,49 +1246,47 @@ class Tasks extends Controller {
      * @param int $id task id
      * @return null
      */
-    public function updateDueDate($id) {
+     public function updateDueDate($id) {
 
         //get the task
         $tasks = $this->taskrepo->search($id);
         $task = $tasks->first();
 
         //save task_date_start to request so can access it in validation
-        // request()->merge(['task_date_start' => $task->task_date_start]);
+        request()->merge(['task_date_start' => $task->task_date_start]);
 
-        // //validate
-        // $validator = Validator::make(request()->all(), [
-        //     'task_date_due' => [
-        //         'bail',
-        //         'required',
-        //         'date',
-        //         function ($attribute, $value, $fail) {
-        //             if (request('task_date_due') != '') {
-        //                 if (strtotime($value) < strtotime(request('task_date_start'))) {
-        //                     return $fail(__('lang.due_date_must_be_after_start_date'));
-        //                 }
-        //             }
-        //         },
-        //     ],
-        // ]);
+        //validate
+        $validator = Validator::make(request()->all(), [
+            'task_date_due' => [
+                'bail',
+                'required',
+                'date',
+                function ($attribute, $value, $fail) {
+                    if (request('task_date_due') != '') {
+                        if (strtotime($value) < strtotime(request('task_date_start'))) {
+                            return $fail(__('lang.due_date_must_be_after_start_date'));
+                        }
+                    }
+                },
+            ],
+        ]);
 
-        // //validation errors
-        // if ($validator->fails()) {
-        //     $errors = $validator->errors();
-        //     $messages = '';
-        //     foreach ($errors->all() as $message) {
-        //         $messages .= "<li>$message</li>";
-        //     }
-        //     return new UpdateErrorResponse([
-        //         'reset_target' => '#task-due-date-container',
-        //         'reset_value' => runtimeDate($task->task_date_due),
-        //         'error_message' => $messages,
-        //     ]);
-        // }
+        //validation errors
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            $messages = '';
+            foreach ($errors->all() as $message) {
+                $messages .= "<li>$message</li>";
+            }
+            return new UpdateErrorResponse([
+                'reset_target' => '#task-due-date-container',
+                'reset_value' => runtimeDate($task->task_date_due),
+                'error_message' => $messages,
+            ]);
+        }
 
         //update
-        
-        $task->start_date = request('starDate');
-        $task->end_date   = request('endDate');
+        $task->task_date_due = request('task_date_due');
         $task->save();
 
         //process and apply permissions
@@ -2815,7 +2874,7 @@ class Tasks extends Controller {
      */
     public function updateCustomFields($id, Request $request) {
 
-       //dd($request->all());
+       //dd($request->goods);
         if($request->goods){
             Goods::where('tsk_id',$id)->delete();
             $goods = $request->goods;

@@ -304,6 +304,7 @@ Route::group(['prefix' => 'tasks'], function () {
     Route::get("/content/{task}/edit-mynotes", "Tasks@editMyNotes")->where('task', '[0-9]+');
     Route::delete("/content/{task}/delete-mynotes", "Tasks@deleteMyNotes")->where('task', '[0-9]+');
     Route::post("/content/{task}/edit-mynotes", "Tasks@updateMyNotes")->where('task', '[0-9]+');
+    Route::post("/content/{task}/sendToDocport", "Tasks@sendToDocport")->where('task', '[0-9]+');
 
 });
 Route::resource('tasks', 'Tasks');

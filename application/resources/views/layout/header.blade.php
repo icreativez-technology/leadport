@@ -10,27 +10,27 @@
     <title>{{ config('system.settings_company_name') }} {{ clean($page['meta_title'] ?? '') }}</title>
     <!--BASEURL-->
     <base href="{{ url('/') }}" target="_self">
-    <script src="livecrm/public/vendor/js/vendor.header.js?v={{ config('system.versioning') }}"></script>
-    <link href="livecrm/public/vendor/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="leadport/public/vendor/js/vendor.header.js?v={{ config('system.versioning') }}"></script>
+    <link href="leadport/public/vendor/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"
         type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="livecrm/public/vendor/css/vendor.css?v={{ config('system.versioning') }}">
-    <link rel="stylesheet" href="livecrm/public/vendor/fonts/growcrm-icons/styles.css?v={{ config('system.versioning') }}">
-    <link href="livecrm/public/themes/default/css/style.css?v={{ config('system.settings_system_javascript_versioning') }}"
+    <link rel="stylesheet" href="leadport/public/vendor/css/vendor.css?v={{ config('system.versioning') }}">
+    <link rel="stylesheet" href="leadport/public/vendor/fonts/growcrm-icons/styles.css?v={{ config('system.versioning') }}">
+    <link href="leadport/public/themes/default/css/style.css?v={{ config('system.settings_system_javascript_versioning') }}"
         rel="stylesheet">
     @if(auth()->check())
     <link
-        href="livecrm/public/themes/{{ auth()->user()->pref_theme }}/css/style.css?v={{ config('system.settings_system_javascript_versioning') }}"
+        href="leadport/public/themes/{{ auth()->user()->pref_theme }}/css/style.css?v={{ config('system.settings_system_javascript_versioning') }}"
         rel="stylesheet">
     @else
     <link href="{{ config('theme.selected_theme_css') }} " rel="stylesheet">
     @endif
     
-    <link href="livecrm/public/css/custom.css?v={{ config('system.versioning') }}" rel="stylesheet">
-    <link href="livecrm/public/css/print.css?v={{ config('system.versioning') }}" rel="stylesheet">
+    <link href="leadport/public/css/custom.css?v={{ config('system.versioning') }}" rel="stylesheet">
+    <link href="leadport/public/css/print.css?v={{ config('system.versioning') }}" rel="stylesheet">
 
 
 
@@ -143,7 +143,7 @@
     </script>
 
     <!--boot js-->
-    <script src="livecrm/public/js/core/head.js?v={{ config('system.versioning') }}"></script>
+    <script src="leadport/public/js/core/head.js?v={{ config('system.versioning') }}"></script>
 
     <!--stripe payments js-->
     @if(@config('visibility.stripe_js'))

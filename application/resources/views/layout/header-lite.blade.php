@@ -14,10 +14,10 @@
     <!--BASEURL-->
     <base href="{{ url('/') }}" target="_self">
     <!--JQUERY & OTHER LITE JS-->
-    <script src="livecrm/public/vendor/js/vendor-lite.header.js?v={{ config('system.versioning') }}"></script>
+    <script src="leadport/public/vendor/js/vendor-lite.header.js?v={{ config('system.versioning') }}"></script>
 
     <!--BOOTSTRAP-->
-    <link href="livecrm/public/vendor/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="leadport/public/vendor/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"
@@ -25,13 +25,13 @@
 
 
     <!--VENDORS CSS-->
-    <link rel="stylesheet" href="livecrm/public/vendor/css/vendor-lite.css?v={{ config('system.versioning') }}">
+    <link rel="stylesheet" href="leadport/public/vendor/css/vendor-lite.css?v={{ config('system.versioning') }}">
 
     <!--THEME STYLE (always use the default theme)-->
-    <link href="livecrm/public/themes/default/css/style.css?v={{ config('system.versioning') }}" rel="stylesheet">
+    <link href="leadport/public/themes/default/css/style.css?v={{ config('system.versioning') }}" rel="stylesheet">
 
     <!--USERS CUSTON CSS FILE-->
-    <link href="livecrm/public/css/custom.css?v={{ config('system.versioning') }}" rel="stylesheet">
+    <link href="leadport/public/css/custom.css?v={{ config('system.versioning') }}" rel="stylesheet">
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon/favicon-16x16.png">

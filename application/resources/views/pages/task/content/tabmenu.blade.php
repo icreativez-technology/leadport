@@ -13,7 +13,7 @@
                         data-url="{{ url('tasks/content/'.$task->task_id.'/show-customfields') }}"
                         data-loading-class="loading-before-centre" data-loading-target="card-tasks-left-panel">
                         <span class="hidden-sm-up"><i class="ti-menu"></i></span>
-                        <span class="hidden-xs-down">@lang('lang.information')</span></a>
+                        <span class="hidden-xs-down">@lang('lang.order_request')</span></a>
         </li>
 
 

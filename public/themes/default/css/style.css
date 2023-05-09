@@ -13989,3 +13989,6 @@ td {
   font-size: 12px !important;
   font-weight: 500;
 }
+table#goodsTable tr td {
+  font-size: 9px !important;
+}
