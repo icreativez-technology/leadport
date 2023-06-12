@@ -239,6 +239,23 @@ class Kernel extends HttpKernel {
         'tasksMiddlewareCloning' => \App\Http\Middleware\Tasks\Cloning::class,
         'tasksMiddlewareManageDependencies' => \App\Http\Middleware\Tasks\ManageDependencies::class,
 
+
+        //[growcrm] - [orders]
+        'ordersMiddlewareIndex' => \App\Http\Middleware\Orders\Index::class,
+        'ordersMiddlewareShow' => \App\Http\Middleware\Orders\Show::class,
+        'ordersMiddlewareCreate' => \App\Http\Middleware\Orders\Create::class,
+        'ordersMiddlewareDestroy' => \App\Http\Middleware\Orders\Destroy::class,
+        'ordersMiddlewareTimer' => \App\Http\Middleware\Orders\Timer::class,
+        'ordersMiddlewareEdit' => \App\Http\Middleware\Orders\Edit::class,
+        'ordersMiddlewareParticipate' => \App\Http\Middleware\Orders\Participate::class,
+        'ordersMiddlewareDeleteAttachment' => \App\Http\Middleware\Orders\DeleteAttachment::class,
+        'ordersMiddlewareDownloadAttachment' => \App\Http\Middleware\Orders\DownloadAttachment::class,
+        'ordersMiddlewareDeleteComment' => \App\Http\Middleware\Orders\DeleteComment::class,
+        'ordersMiddlewareEditDeleteChecklist' => \App\Http\Middleware\Orders\EditDeleteChecklist::class,
+        'ordersMiddlewareAssign' => \App\Http\Middleware\Orders\Assign::class,
+        'ordersMiddlewareCloning' => \App\Http\Middleware\Orders\Cloning::class,
+        'ordersMiddlewareManageDependencies' => \App\Http\Middleware\Orders\ManageDependencies::class,
+
         //[growcrm] - [files]
         'filesMiddlewareIndex' => \App\Http\Middleware\Files\Index::class,
         'filesMiddlewareCreate' => \App\Http\Middleware\Files\Create::class,

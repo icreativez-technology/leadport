@@ -336,6 +336,67 @@ class DestroyRepository {
         $task->delete();
     }
 
+
+    public function destroyOrder($task_id) {
+
+        //validate task
+        if (!is_numeric($task_id)) {
+            Log::error("validation error - invalid params", ['process' => '[destroy][task]', config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__]);
+            return false;
+        }
+
+        //get task and validate
+        if (!$task = \App\Models\Order::Where('task_id', $task_id)->first()) {
+            Log::error("record could not be found", ['process' => '[destroy][task]', config('app.debug_ref'), 'function' => __function__, 'file' => basename(__FILE__), 'line' => __line__, 'path' => __file__]);
+            return false;
+        }
+
+        //delete tags
+        $task->tags()->delete();
+
+        //delete checklists
+        $task->checklists()->delete();
+
+        //delete assigned records
+        $task->assignedrecords()->delete();
+
+        //delete attachemnts
+        if ($attachments = $task->attachments()->get()) {
+            foreach ($attachments as $attachment) {
+                if ($attachment->attachment_directory != '') {
+                    if (Storage::exists("files/$attachment->attachment_directory")) {
+                        Storage::deleteDirectory("files/$attachment->attachment_directory");
+                    }
+                }
+                $attachment->delete();
+            }
+        }
+
+        //delete timers
+        $task->timers()->delete();
+
+        //delete comments
+        if ($comments = $task->comments()->get()) {
+            foreach ($comments as $comment) {
+                $this->destroyComment($comment->comment_id);
+            }
+        }
+
+        //delete events and events tracking
+        if ($events = \App\Models\Event::Where('event_parent_type', 'task')->Where('event_parent_id', $task_id)->get()) {
+            foreach ($events as $event) {
+                $event->trackings()->delete();
+                $event->delete();
+            }
+        }
+
+        //delete queued emails
+        \App\Models\EmailQueue::Where('emailqueue_resourcetype', 'task')->Where('emailqueue_resourceid', $task_id)->delete();
+
+        //delete task
+        $task->delete();
+    }
+
     /**
      * destroy a expense and all related items
      * @param numeric $expense_id id of the record

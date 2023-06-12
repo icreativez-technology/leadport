@@ -112,6 +112,32 @@
                 <?php endif; ?>
                 <!--tasks-->
 
+                 <!--tasks[done]-->
+                <?php if(config('visibility.modules.tasks')): ?>
+
+                <li data-modular-id="main_menu_team_orders"
+                    class="sidenav-menu-item <?php echo e($page['mainmenu_orders'] ?? ''); ?>">
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                        <i class="ti-menu-alt"></i>
+                        <span class="hide-menu"><?php echo e(cleanLang(__('lang.orders'))); ?>
+
+                        </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li class="sidenav-submenu <?php echo e($page['submenu_orders'] ?? ''); ?>" id="submenu_clients">
+                            <a href="<?php echo e(url('orders')); ?>"
+                                class="<?php echo e($page['submenu_orders'] ?? ''); ?>"><?php echo e(cleanLang(__('lang.orders'))); ?></a>
+                        </li>
+                        <li class="sidenav-submenu <?php echo e($page['submenu_orders'] ?? ''); ?>" id="submenu_contacts">
+                            <a href="<?php echo e(url('orders')); ?>"
+                                class="<?php echo e($page['submenu_orders'] ?? ''); ?>"><?php echo e(cleanLang(__('lang.requests'))); ?></a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <?php endif; ?>
+                <!--tasks-->
+
                 <!--leads[done]-->
                 <?php if(config('visibility.modules.leads')): ?>
                 <li data-modular-id="main_menu_team_leads"

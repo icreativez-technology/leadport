@@ -1,0 +1,458 @@
+[2023-05-11 10:34:36] production.ERROR: Target class [App\Http\Controllers\Settings\Units] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Settings\\Units] does not exist. at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:879)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#11 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 599)
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"App\\Http\\Controllers\\Settings\\Units\" does not exist at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:877)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(877): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#12 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 599)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2023-05-11 12:17:13] production.ERROR: Command "dump-autoload" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"dump-autoload\" is not defined. at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php:709)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(259): Symfony\\Component\\Console\\Application->find('dump-autoload')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2023-05-11 12:20:39] production.ERROR: Command "make:response" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:export
+    make:factory
+    make:import
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:response\" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:export
+    make:factory
+    make:import
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php:709)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(259): Symfony\\Component\\Console\\Application->find('make:response')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2023-05-11 14:06:47] production.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist (SQL: alter table `orders` add `id` bigint unsigned not null auto_increment primary key, add `tsk_id` bigint unsigned not null, add `transport_type` varchar(255) null, add `equipment` varchar(255) null, add `load_type` varchar(255) null, add `quantity` varchar(255) null, add `pickup_index` varchar(255) null, add `pickup_county` varchar(255) null, add `pickup_city` varchar(255) null, add `pickup_address` varchar(255) null, add `pickup_date` date null, add `delivery_index` varchar(255) null, add `delivery_county` varchar(255) null, add `delivery_city` varchar(255) null, add `delivery_address` varchar(255) null, add `delivery_date` date null, add `incoterms_location` varchar(255) null, add `un_code` varchar(255) null, add `temperature_range` varchar(255) null, add `adr_carriage` varchar(255) null, add `fargile_carriage` varchar(255) null, add `remarks` varchar(255) null, add `transport_price` varchar(255) null, add `transit_time` varchar(255) null, add `status` varchar(255) not null default 'draft', add `created_at` timestamp null, add `updated_at` timestamp null) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist (SQL: alter table `orders` add `id` bigint unsigned not null auto_increment primary key, add `tsk_id` bigint unsigned not null, add `transport_type` varchar(255) null, add `equipment` varchar(255) null, add `load_type` varchar(255) null, add `quantity` varchar(255) null, add `pickup_index` varchar(255) null, add `pickup_county` varchar(255) null, add `pickup_city` varchar(255) null, add `pickup_address` varchar(255) null, add `pickup_date` date null, add `delivery_index` varchar(255) null, add `delivery_county` varchar(255) null, add `delivery_city` varchar(255) null, add `delivery_address` varchar(255) null, add `delivery_date` date null, add `incoterms_location` varchar(255) null, add `un_code` varchar(255) null, add `temperature_range` varchar(255) null, add `adr_carriage` varchar(255) null, add `fargile_carriage` varchar(255) null, add `remarks` varchar(255) null, add `transport_price` varchar(255) null, add `transit_time` varchar(255) null, add `status` varchar(255) not null default 'draft', add `created_at` timestamp null, add `updated_at` timestamp null) at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:712)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('alter table `or...', Array, Object(Closure))
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(502): Illuminate\\Database\\Connection->run('alter table `or...', Array, Object(Closure))
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(109): Illuminate\\Database\\Connection->statement('alter table `or...')
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(211): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->table('orders', Object(Closure))
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\database\\migrations\\2023_05_11_135242_create_orders_table.php(43): Illuminate\\Support\\Facades\\Facade::__callStatic('table', Array)
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(472): CreateOrdersTable->up()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(CreateOrdersTable), 'up')
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateOrdersTable), 'up')
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('E:\\\\xampp\\\\htdocs...', 2, false)
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:501)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(501): PDOStatement->execute()
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('alter table `or...', Array)
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('alter table `or...', Array, Object(Closure))
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(502): Illuminate\\Database\\Connection->run('alter table `or...', Array, Object(Closure))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(109): Illuminate\\Database\\Connection->statement('alter table `or...')
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(211): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->table('orders', Object(Closure))
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\database\\migrations\\2023_05_11_135242_create_orders_table.php(43): Illuminate\\Support\\Facades\\Facade::__callStatic('table', Array)
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(472): CreateOrdersTable->up()
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(CreateOrdersTable), 'up')
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateOrdersTable), 'up')
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('E:\\\\xampp\\\\htdocs...', 2, false)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 {main}
+"} 
+[2023-05-11 14:08:20] production.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist (SQL: alter table `orders` add `id` bigint unsigned not null auto_increment primary key, add `tsk_id` int not null, add `transport_type` varchar(255) null, add `equipment` varchar(255) null, add `load_type` varchar(255) null, add `quantity` varchar(255) null, add `pickup_index` varchar(255) null, add `pickup_county` varchar(255) null, add `pickup_city` varchar(255) null, add `pickup_address` varchar(255) null, add `pickup_date` date null, add `delivery_index` varchar(255) null, add `delivery_county` varchar(255) null, add `delivery_city` varchar(255) null, add `delivery_address` varchar(255) null, add `delivery_date` date null, add `incoterms_location` varchar(255) null, add `un_code` varchar(255) null, add `temperature_range` varchar(255) null, add `adr_carriage` varchar(255) null, add `fargile_carriage` varchar(255) null, add `remarks` varchar(255) null, add `transport_price` varchar(255) null, add `transit_time` varchar(255) null, add `status` varchar(255) not null default 'draft', add `created_at` timestamp null, add `updated_at` timestamp null) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist (SQL: alter table `orders` add `id` bigint unsigned not null auto_increment primary key, add `tsk_id` int not null, add `transport_type` varchar(255) null, add `equipment` varchar(255) null, add `load_type` varchar(255) null, add `quantity` varchar(255) null, add `pickup_index` varchar(255) null, add `pickup_county` varchar(255) null, add `pickup_city` varchar(255) null, add `pickup_address` varchar(255) null, add `pickup_date` date null, add `delivery_index` varchar(255) null, add `delivery_county` varchar(255) null, add `delivery_city` varchar(255) null, add `delivery_address` varchar(255) null, add `delivery_date` date null, add `incoterms_location` varchar(255) null, add `un_code` varchar(255) null, add `temperature_range` varchar(255) null, add `adr_carriage` varchar(255) null, add `fargile_carriage` varchar(255) null, add `remarks` varchar(255) null, add `transport_price` varchar(255) null, add `transit_time` varchar(255) null, add `status` varchar(255) not null default 'draft', add `created_at` timestamp null, add `updated_at` timestamp null) at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:712)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('alter table `or...', Array, Object(Closure))
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(502): Illuminate\\Database\\Connection->run('alter table `or...', Array, Object(Closure))
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(109): Illuminate\\Database\\Connection->statement('alter table `or...')
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(211): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->table('orders', Object(Closure))
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\database\\migrations\\2023_05_11_135242_create_orders_table.php(43): Illuminate\\Support\\Facades\\Facade::__callStatic('table', Array)
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(472): CreateOrdersTable->up()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(CreateOrdersTable), 'up')
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateOrdersTable), 'up')
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('E:\\\\xampp\\\\htdocs...', 2, false)
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'livesoft-crm.orders' doesn't exist at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:501)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(501): PDOStatement->execute()
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('alter table `or...', Array)
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('alter table `or...', Array, Object(Closure))
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(502): Illuminate\\Database\\Connection->run('alter table `or...', Array, Object(Closure))
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(109): Illuminate\\Database\\Connection->statement('alter table `or...')
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(211): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->table('orders', Object(Closure))
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\database\\migrations\\2023_05_11_135242_create_orders_table.php(43): Illuminate\\Support\\Facades\\Facade::__callStatic('table', Array)
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(472): CreateOrdersTable->up()
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(CreateOrdersTable), 'up')
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateOrdersTable), 'up')
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('E:\\\\xampp\\\\htdocs...', 2, false)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 {main}
+"} 
+[2023-05-12 12:11:41] production.ERROR: Target class [App\Http\Controllers\Settings\Units] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Settings\\Units] does not exist. at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:879)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#11 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 655)
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"App\\Http\\Controllers\\Settings\\Units\" does not exist at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:877)
+[stacktrace]
+#0 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(877): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#12 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 655)
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#22 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2023-05-12 12:12:09] production.ERROR: Constant BASE_DIR already defined {"exception":"[object] (ErrorException(code: 0): Constant BASE_DIR already defined at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\bootstrap\\app.php:13)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Constant BASE_D...', 'E:\\\\xampp\\\\htdocs...', 13)
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\bootstrap\\app.php(13): define('BASE_DIR', 'E:\\\\xampp\\\\htdocs...')
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteCacheCommand.php(92): require('E:\\\\xampp\\\\htdocs...')
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteCacheCommand.php(79): Illuminate\\Foundation\\Console\\RouteCacheCommand->getFreshApplication()
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteCacheCommand.php(55): Illuminate\\Foundation\\Console\\RouteCacheCommand->getFreshApplicationRoutes()
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteCacheCommand->handle()
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteCacheCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 {main}
+"} 
+[2023-05-12 14:15:19] production.ERROR: Constant BASE_DIR already defined {"exception":"[object] (ErrorException(code: 0): Constant BASE_DIR already defined at E:\\xampp\\htdocs\\livesoft\\leadport\\application\\bootstrap\\app.php:13)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Constant BASE_D...', 'E:\\\\xampp\\\\htdocs...', 13)
+#1 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\bootstrap\\app.php(13): define('BASE_DIR', 'E:\\\\xampp\\\\htdocs...')
+#2 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ConfigCacheCommand.php(84): require('E:\\\\xampp\\\\htdocs...')
+#3 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ConfigCacheCommand.php(58): Illuminate\\Foundation\\Console\\ConfigCacheCommand->getFreshConfiguration()
+#4 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\ConfigCacheCommand->handle()
+#5 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#7 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#8 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#9 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#10 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#11 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ConfigCacheCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 E:\\xampp\\htdocs\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
+[2023-05-14 08:39:32] production.ERROR: Target class [App\Http\Controllers\Settings\Units] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Settings\\Units] does not exist. at F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:879)
+[stacktrace]
+#0 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#1 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#2 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#3 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#4 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#5 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#6 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#7 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#8 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#9 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#10 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#11 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 655)
+#12 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#13 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#14 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#15 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#16 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#21 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 {main}
+
+[previous exception] [object] (ReflectionException(code: -1): Class \"App\\Http\\Controllers\\Settings\\Units\" does not exist at F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:877)
+[stacktrace]
+#0 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(877): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#1 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#2 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#3 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#4 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#5 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#6 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#7 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#8 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(734): Illuminate\\Routing\\Route->gatherMiddleware()
+#9 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#10 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#11 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#12 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 655)
+#13 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(695): array_map(Object(Closure), Array, Array)
+#14 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#15 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#16 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#17 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#22 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(1015): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 F:\\xampp\\htdocs\\icreativez\\livesoft\\leadport\\application\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 

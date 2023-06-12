@@ -364,6 +364,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animated bounceInDown language">
                         <div class="row">
+                            @if(request('system_languages'))
                             @foreach(request('system_languages') as $key => $language)
                             <div class="col-6">
                                 <a class="dropdown-item js-ajax-request text-capitalize" href="javascript:void(0)"
@@ -376,6 +377,7 @@
                                 </span>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                 </li>

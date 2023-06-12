@@ -697,7 +697,8 @@ class SettingsRepository {
 
         //update
         $settings->settings_modules_projects = (request('settings_modules_projects') == 'on') ? 'enabled' : 'disabled';
-        $settings->settings_modules_tasks = (request('settings_modules_tasks') == 'on') ? 'enabled' : 'disabled';
+        $settings->settings_modules_tasks  = (request('settings_modules_tasks') == 'on') ? 'enabled' : 'disabled';
+        $settings->settings_modules_orders = (request('settings_modules_orders') == 'on') ? 'enabled' : 'disabled';
         $settings->settings_modules_invoices = (request('settings_modules_invoices') == 'on') ? 'enabled' : 'disabled';
         $settings->settings_modules_payments = (request('settings_modules_payments') == 'on') ? 'enabled' : 'disabled';
         $settings->settings_modules_leads = (request('settings_modules_leads') == 'on') ? 'enabled' : 'disabled';

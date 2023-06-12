@@ -68,6 +68,19 @@ return [
         'completed' => 'success',
     ],
 
+   /**
+     * Various order statuses, with their corresponding bootstrap colors (colors are used for labels etc)
+     * The following colors are available: (default|info|warning|success|danger|primary|green|lime|brown)
+     * [IMPORTANT WARNING]
+     * Only change the color values
+     */
+    'order_statuses' => [
+        'new' => 'default',
+        'in_progress' => 'info',
+        'testing' => 'purple',
+        'awaiting_feedback' => 'warning',
+        'completed' => 'success',
+    ],
     /**
      * Various task priority, with their corresponding bootstrap colors (colors are used for labels etc)
      * The following colors are available: (default|info|warning|success|danger|primary|green|lime|brown)
@@ -76,6 +89,20 @@ return [
      * normal | high | urgent
      */
     'task_priority' => [
+        'low' => 'default',
+        'normal' => 'info',
+        'high' => 'warning',
+        'urgent' => 'danger',
+    ],
+
+      /**
+     * Various order priority, with their corresponding bootstrap colors (colors are used for labels etc)
+     * The following colors are available: (default|info|warning|success|danger|primary|green|lime|brown)
+     * [IMPORTANT WARNING]
+     * Only change the color values
+     * normal | high | urgent
+     */
+    'order_priority' => [
         'low' => 'default',
         'normal' => 'info',
         'high' => 'warning',

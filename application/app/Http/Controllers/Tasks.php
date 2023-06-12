@@ -43,6 +43,7 @@ use App\Mail\TaskStatusChanged;
 use App\Models\Checklist;
 use App\Models\Comment;
 use App\Models\Goods;
+use App\Models\Order;
 use App\Models\Task;
 use App\Models\Timer;
 use App\Permissions\AttachmentPermissions;
@@ -904,22 +905,28 @@ class Tasks extends Controller {
      */
     public function sendToDocport(Request $request,$id)
     {
+        $goods = Goods::where('tsk_id',$id)->get()->toArray();
 
-        $goods = ($request->goods) ? array_values($request->goods) : null;
         $orderRequestData['lpcmrparam'] = array(
             'TransportType'          => $request->task_custom_field_1,
             'Equipment'              => $request->task_custom_field_2,
             'LoadType'               => $request->task_custom_field_3,
             'Quantity'               => $request->task_custom_field_4,
+            'ShipperCountryId'       => 1,
+            'ShipperCityId'          => 1,
             'PickupCountryId'        => 1,
             'PickupCityId'           => 1,
-            'ShipperCountryId'       => 1,
+            'ShipperIndex'           => $request->task_custom_field_9,
+            'ShipperAddress'         => $request->task_custom_field_8,
             'PickupDateTime'         => $request->task_custom_field_7,
             'PickupAddress'          => $request->task_custom_field_8,
             'PickupIndex'            => $request->task_custom_field_9,
             'DeliveryCountryId'      => 2,
             'DeliveryCityId'         => 2,
             'ConsigneeCountryId'     => 2,
+            'ConsigneeCityId'        => 2,
+            'ConsigneeIndex'         => $request->task_custom_field_14,
+            'ConsigneeAddress'       => $request->task_custom_field_13,
             'DeliveryDateTime'       => $request->task_custom_field_12,
             'DeliveryAddress'        => $request->task_custom_field_13,
             'DeliveryIndex'          => $request->task_custom_field_14,
@@ -932,20 +939,21 @@ class Tasks extends Controller {
             'Remarks'                => $request->task_custom_field_21,
             'TransportPrice'         => $request->task_custom_field_22,
             'TransitTime'            => $request->task_custom_field_23,
-            'goods'                  => $goods
+            'lpgoods'                => $goods ? $goods : null
         );
 
-
+        //dd($orderRequestData);
         $url = "https://livecmr20230427154645.azurewebsites.net/api/ShippingOrder/AddOrderLeadPort";
         $response = Http::withHeaders(['Content-Type' => 'application/json'])
         ->withBody(json_encode($orderRequestData), 'application/json')
         ->post($url);
-        
-        if($response->getStatusCode()  == 201){ 
-            $jsondata['notification'] = array('type' => 'success', 'value' => __('lang.order_has_been_sent'));
+
+        if($response->getStatusCode() == 200 || $response->getStatusCode() == 201 ){ 
             $tasks = $this->taskrepo->search($id);
             $task = $tasks->first();
-            $task['sendToDocport'] = true;
+            $this->createOrderRequest($task);
+            $updateTaskstatus    = Task::where('task_id',$id)->update(['send_to_docport'=>1]);
+            $jsondata['notification'] = array('type' => 'success', 'value' => __('lang.order_has_been_sent'));
             //package to send to response
             $payload = [
                 'type' => 'send-order-to-docport',
@@ -959,6 +967,79 @@ class Tasks extends Controller {
         }
 
     }
+
+   
+    public function createOrderRequest($task)
+    {
+        $data  = array(
+            'task_id'=>$task->task_id,
+            'task_importid'=>$task->task_importid,
+            'task_position'=>$task->task_position,
+            'task_created'=>$task->task_created,
+            'task_updated'=>$task->task_updated,
+            'task_creatorid'=>$task->task_creatorid,
+            'task_projectid'=>$task->task_projectid,
+            'task_date_start'=>$task->task_date_start,
+            'task_date_due'=>$task->task_date_due,
+            'task_title'=>$task->task_title,
+            'task_description'=>$task->task_description,
+            'task_client_visibility'=>$task->task_client_visibility,
+            'task_milestoneid'=>$task->task_milestoneid,
+            'task_previous_status'=>$task->task_previous_status,
+            'task_priority'=>$task->task_priority,
+            'task_status'=>$task->task_status,
+            'task_active_state'=>$task->task_active_state,
+            'task_billable'=>$task->task_billable,
+            'task_billable_status'=>$task->task_billable_status,
+            'task_billable_invoiceid'=>$task->task_billable_invoiceid,
+            'task_billable_lineitemid'=>$task->task_billable_lineitemid,
+            'task_visibility'=>$task->task_visibility,
+            'task_overdue_notification_sent'=>$task->task_overdue_notification_sent,
+            'task_recurring'=>$task->task_recurring,
+            'task_recurring_duration'=>$task->task_recurring_duration,
+            'task_recurring_period'=>$task->task_recurring_period,
+            'task_recurring_cycles'=>$task->task_recurring_cycles,
+            'task_recurring_cycles_counter'=>$task->task_recurring_cycles_counter,
+            'task_recurring_last'=>$task->task_recurring_last,
+            'task_recurring_next'=>$task->task_recurring_next,
+            'task_recurring_child'=>$task->task_recurring_child,
+            'task_recurring_parent_id'=>$task->task_recurring_parent_id,
+            'task_recurring_copy_checklists'=>$task->task_recurring_copy_checklists,
+            'task_recurring_copy_files'=>$task->task_recurring_copy_files,
+            'task_recurring_automatically_assign'=>$task->task_recurring_automatically_assign,
+            'client'=>$task->client,
+            'task_recurring_finished'=>$task->task_position,
+            'task_custom_field_1'=>$task->task_custom_field_1,
+            'task_custom_field_2'=>$task->task_custom_field_2,
+            'task_custom_field_3'=>$task->task_custom_field_3,
+            'task_custom_field_4'=>$task->task_custom_field_4,
+            'task_custom_field_5'=>$task->task_custom_field_5,
+            'task_custom_field_6'=>$task->task_custom_field_6,
+            'task_custom_field_7'=>$task->task_custom_field_7,
+            'task_custom_field_8'=>$task->task_custom_field_8,
+            'task_custom_field_9'=>$task->task_custom_field_9,
+            'task_custom_field_10'=>$task->task_custom_field_10,
+            'task_custom_field_11'=>$task->task_custom_field_11,
+            'task_custom_field_12'=>$task->task_custom_field_12,
+            'task_custom_field_13'=>$task->task_custom_field_13,
+            'task_custom_field_14'=>$task->task_custom_field_14,
+            'task_custom_field_15'=>$task->task_custom_field_15,
+            'task_custom_field_16'=>$task->task_custom_field_16,
+            'task_custom_field_17'=>$task->task_custom_field_17,
+            'task_custom_field_18'=>$task->task_custom_field_18,
+            'task_custom_field_19'=>$task->task_custom_field_19,
+            'task_custom_field_20'=>$task->task_custom_field_20,
+            'task_custom_field_21'=>$task->task_custom_field_21,
+            'task_custom_field_22'=>$task->task_custom_field_22,
+            'task_custom_field_23'=>$task->task_custom_field_23,
+            'from_date'=>$task->start_date,
+            'to_date'=>$task->end_date,
+            'send_to_docport'=>$task->send_to_docport,
+        );
+
+        $createOrder  = Order::create($data);
+        return $createOrder;
+    }  
 
     /**
      * Start a users timer for a given task
@@ -3521,7 +3602,6 @@ class Tasks extends Controller {
 
         //default values
         $stats = [];
-
         foreach (config('task_statuses') as $status) {
             $stat = [
                 'value' => \App\Models\Task::where('task_status', $status->taskstatus_id)->count(),

@@ -1,7 +1,7 @@
 <?php
 
 /** --------------------------------------------------------------------------------
- * This classes renders the [assign task] email and stores it in the queue
+ * This classes renders the [assign order] email and stores it in the queue
  * @package    Grow CRM
  * @author     NextLoop
  *----------------------------------------------------------------------------------*/
@@ -11,7 +11,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 
-class TaskAssignment extends Mailable {
+class OrderAssignment extends Mailable {
     use Queueable;
 
     /**
@@ -52,12 +52,12 @@ class TaskAssignment extends Mailable {
     public function build() {
 
         //email template
-        if (!$template = \App\Models\EmailTemplate::Where('emailtemplate_name', 'Task Assignment')->first()) {
+        if (!$template = \App\Models\EmailTemplate::Where('emailtemplate_name', 'Order Assignment')->first()) {
             return false;
         }
 
         //validate
-        if (!$this->obj instanceof \App\Models\Task || !$this->user instanceof \App\Models\User) {
+        if (!$this->obj instanceof \App\Models\Order || !$this->user instanceof \App\Models\User) {
             return false;
         }
 
@@ -71,9 +71,9 @@ class TaskAssignment extends Mailable {
             return;
         }
 
-        //get the task status
-        if ($task_status = \App\Models\TaskStatus::Where('taskstatus_id', $this->obj->task_status)->first()) {
-            $status = $task_status->taskstatus_title;
+        //get the order status
+        if ($order_status = \App\Models\OrderStatus::Where('orderstatus_id', $this->obj->order_status)->first()) {
+            $status = $order_status->orderstatus_title;
         } else {
             $status = '---';
         }
@@ -84,22 +84,22 @@ class TaskAssignment extends Mailable {
         //set template variables
         $payload += [
             'first_name' => $this->user->first_name,
-            'last_name' => $this->user->last_name,
+            'last_name'  => $this->user->last_name,
             'assigned_by_first_name' => auth()->user()->first_name,
-            'assigned_by_last_name' => auth()->user()->last_name,
-            'task_id' => $this->obj->task_id,
-            'task_title' => $this->obj->task_title,
-            'task_created_date' => runtimeDate($this->obj->task_created),
-            'task_date_start' => runtimeDate($this->obj->task_date_start),
-            'task_description' => $this->obj->task_description,
-            'task_date_due' => runtimeDate($this->obj->task_date_due),
+            'assigned_by_last_name'  => auth()->user()->last_name,
+            'order_id' =>    $this->obj->order_id,
+            'order_title' => $this->obj->order_title,
+            'order_created_date' => runtimeDate($this->obj->order_created),
+            'order_date_start' => runtimeDate($this->obj->order_date_start),
+            'order_description' => $this->obj->order_description,
+            'order_date_due' => runtimeDate($this->obj->order_date_due),
             'project_title' => $this->obj->project_title,
             'project_id' => $this->obj->project_id,
             'client_name' => $this->obj->client_company_name,
-            'client_id' => $this->obj->task_clientid,
-            'task_status' => $status,
-            'task_milestone' => $this->obj->milestone_title,
-            'task_url' => url('/tasks/v/' . $this->obj->task_id . '/view'),
+            'client_id' => $this->obj->order_clientid,
+            'order_status' => $status,
+            'order_milestone' => $this->obj->milestone_title,
+            'order_url' => url('/orders/v/' . $this->obj->order_id . '/view'),
         ];
 
         //save in the database queue

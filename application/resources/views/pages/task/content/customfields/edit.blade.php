@@ -9,7 +9,7 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
 }
 </style>
 <!--heading-->
-<div class="x-heading"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.request_details')) }}</div>
+<div class="x-heading"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.request_details'))}} <strong style='color:#00b388'> ( {{$task->send_to_docport ? 'Convarted to Docport' : ' '}} )</strong></div>
 
 <!--Form Data-->
 @if($task)
@@ -67,7 +67,7 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
      </div>
   </div>
   <div class="row form-row">
-    <span class="custom-text"><strong>Pickup</strong> </span> 
+    <span class="custom-text mt-4"><strong>Pickup</strong> </span> 
     <hr>
     <div class="form-group d-flex">
         <span class="custom-text">Country : 
@@ -85,7 +85,7 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
     </div>
   </div>
   <div class="row form-row">
-    <span class="custom-text"> <strong>Delivery</strong> </span> 
+    <span class="custom-text mt-4"> <strong>Delivery</strong> </span> 
     <hr>
     <div class="form-group d-flex">
         <span class="custom-text">Country : 
@@ -153,20 +153,12 @@ span.x-assigned-user.x-assign-new.js-card-settings-button-static.card-task-assig
             data-form-id="card-task-organisation">
             {{ cleanLang(__('lang.update')) }}
         </button>
-        <button type="button" class="btn btn-danger btn-xs ajax-request float-right"
-            data-loading-target="card-tasks-left-panel"
-            data-loading-class="loading-before-centre"
-            data-url="{{ url('/tasks/content/'.$task->task_id.'/sendToDocport') }}" data-type="form" data-ajax-type="post"
-            data-form-id="card-task-organisation">
-            {{ cleanLang(__('lang.send_to_docport')) }}
-        </button>
+
     </div>
 </div>
 
 @else
-
 nothng here
-
 @endif
 
 <script>

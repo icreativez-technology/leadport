@@ -14,15 +14,15 @@
     @foreach($task->goods as $good) 
     <tr>
                 <td>{{ $good->qty}}</td>
-                <td>{{ $good->units}}</td>
-                <td>{{ $good->kg_calc}}</td>
+                <td>{{ $good->unitid}}</td>
+                <td>{{ $good->kgcalc}}</td>
                 <td>{{ $good->ldm}}</td>
                 <td>{{ $good->value}}</td>
                 <td>{{ $good->description}}</td>
-                <td>{{ $good->volume}}</td>
-                <td>{{ $good->length}}</td>
-                <td>{{ $good->width}}</td>
-                <td>{{ $good->height}}</td>
+                <td>{{ $good->volumem3}}</td>
+                <td>{{ $good->lengthcm}}</td>
+                <td>{{ $good->widthcm}}</td>
+                <td>{{ $good->heightcm}}</td>
     </tr>
     @endforeach
 </table>

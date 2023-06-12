@@ -11,14 +11,18 @@ class Goods extends Model {
     protected $fillable = [
         'tsk_id',
         'qty',
-        'units',
-        'kg_calc',
+        'unitid',
+        'kgcalc',
         'ldm',
         'value',
         'description',
-        'volume',
-        'length',
-        'width',
-        'height'
+        'volumem3',
+        'lengthcm',
+        'widthcm',
+        'heightcm'
+    ];
+
+    protected $hidden = [
+        'created_at', 'updated_at',
     ];
 }

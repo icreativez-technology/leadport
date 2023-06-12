@@ -363,6 +363,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animated bounceInDown language">
                         <div class="row">
+                            <?php if(request('system_languages')): ?>
                             <?php $__currentLoopData = request('system_languages'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-6">
                                 <a class="dropdown-item js-ajax-request text-capitalize" href="javascript:void(0)"
@@ -376,6 +377,7 @@
                                 </span>
                             </div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </li>

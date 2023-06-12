@@ -251,6 +251,8 @@ Route::group(['prefix' => 'projects'], function () {
 });
 Route::resource('projects', 'Projects');
 
+
+
 //TASKS
 Route::group(['prefix' => 'tasks'], function () {
     Route::any("/search", "Tasks@index");
@@ -307,7 +309,72 @@ Route::group(['prefix' => 'tasks'], function () {
     Route::post("/content/{task}/sendToDocport", "Tasks@sendToDocport")->where('task', '[0-9]+');
 
 });
+
 Route::resource('tasks', 'Tasks');
+
+
+
+//ORDERS
+
+Route::group(['prefix' => 'orders'], function () {
+    Route::any("/search", "Orders@index");
+    Route::any("/timer/{id}/start", "Orders@timerStart")->where('id', '[0-9]+');
+    Route::any("/timer/{id}/stop", "Orders@timerStop")->where('id', '[0-9]+');
+    Route::any("/timer/stop", "Orders@timerStopUser");
+    Route::any("/timer/{id}/stopall", "Orders@timerStopAll")->where('id', '[0-9]+');
+    Route::post("/delete", "Orders@destroy")->middleware(['demoModeCheck']);
+    Route::post("/{order}/toggle-status", "Orders@toggleStatus")->where('order', '[0-9]+');
+    Route::post("/{order}/update-description", "Orders@updateDescription")->where('order', '[0-9]+');
+    Route::post("/{order}/attach-files", "Orders@attachFiles")->where('order', '[0-9]+');
+    Route::delete("/delete-attachment/{uniqueid}", "Orders@deleteAttachment")->middleware(['demoModeCheck']);
+    Route::get("/download-attachment/{uniqueid}", "Orders@downloadAttachment");
+    Route::post("/{order}/post-comment", "Orders@storeComment")->where('order', '[0-9]+');
+    Route::delete("/delete-comment/{commentid}", "Orders@deleteComment")->where('commentid', '[0-9]+');
+    Route::post("/{order}/update-title", "Orders@updateTitle")->where('order', '[0-9]+');
+    Route::post("/{order}/add-checklist", "Orders@storeChecklist")->where('order', '[0-9]+');
+    Route::post("/update-checklist/{checklistid}", "Orders@updateChecklist")->where('checklistid', '[0-9]+');
+    Route::delete("/delete-checklist/{checklistid}", "Orders@deleteChecklist")->where('checklistid', '[0-9]+');
+    Route::post("/toggle-checklist-status/{checklistid}", "Orders@toggleChecklistStatus")->where('checklistid', '[0-9]+');
+    Route::post("/{order}/update-start-date", "Orders@updateStartDate")->where('order', '[0-9]+');
+    Route::post("/{order}/update-due-date", "Orders@updateDueDate")->where('order', '[0-9]+');
+    Route::post("/{order}/update-status", "Orders@updateStatus")->where('order', '[0-9]+');
+    Route::post("/{order}/update-priority", "Orders@updatePriority")->where('order', '[0-9]+');
+    Route::post("/{order}/update-visibility", "Orders@updateVisibility")->where('order', '[0-9]+');
+    Route::post("/{order}/update-client", "Orders@updateClient")->where('order', '[0-9]+');
+    Route::post("/{order}/update-milestone", "Orders@updateMilestone")->where('order', '[0-9]+');
+    Route::post("/{order}/update-assigned", "Orders@updateAssigned")->where('order', '[0-9]+');
+    Route::post("/{order}/update-tags", "Orders@updateTags")->where('order', '[0-9]+');
+    Route::post("/update-position", "Orders@updatePosition");
+    Route::any("/v/{order}/{slug}", "Orders@index")->where('order', '[0-9]+');
+    Route::any("/v/{order}", "Orders@index")->where('order', '[0-9]+');
+    Route::post("/{order}/update-custom", "Orders@updateCustomFields")->where('order', '[0-9]+');
+    Route::put("/{order}/archive", "Orders@archive")->where('order', '[0-9]+');
+    Route::put("/{order}/activate", "Orders@activate")->where('order', '[0-9]+');
+    Route::get("/{order}/clone", "Orders@cloneTask")->where('order', '[0-9]+');
+    Route::post("/{order}/clone", "Orders@cloneStore")->where('order', '[0-9]+');
+    Route::get("/{order}/recurring-settings", "Orders@recurringSettings")->where('order', '[0-9]+');
+    Route::post("/{order}/recurring-settings", "Orders@recurringSettingsUpdate")->where('order', '[0-9]+');
+    Route::get("/{order}/stop-recurring", "Orders@stopRecurring")->where('order', '[0-9]+');
+    Route::post("/{order}/add-dependency", "Orders@storeDependency")->where('order', '[0-9]+');
+    Route::delete("/{order}/delete-dependency", "Orders@deleteDependency")->where('order', '[0-9]+');
+
+    //card tabs
+    Route::get("/content/{order}/show-main", "Orders@show")->where('lead', '[0-9]+');
+    Route::get("/content/{order}/show-customfields", "Orders@showCustomFields")->where('order', '[0-9]+');
+    Route::get("/content/{order}/edit-customfields", "Orders@editCustomFields")->where('order', '[0-9]+');
+    Route::post("/content/{order}/edit-customfields", "Orders@updateCustomFields")->where('order', '[0-9]+');
+    Route::get("/content/{order}/show-mynotes", "Orders@showMyNotes")->where('order', '[0-9]+');
+    Route::get("/content/{order}/create-mynotes", "Orders@createMyNotes")->where('order', '[0-9]+');
+    Route::get("/content/{order}/edit-mynotes", "Orders@editMyNotes")->where('order', '[0-9]+');
+    Route::delete("/content/{order}/delete-mynotes", "Orders@deleteMyNotes")->where('order', '[0-9]+');
+    Route::post("/content/{order}/edit-mynotes", "Orders@updateMyNotes")->where('order', '[0-9]+');
+    Route::post("/content/{order}/sendToDocport", "Orders@sendToDocport")->where('order', '[0-9]+');
+
+});
+Route::resource('orders', 'Orders');
+
+
+
 
 //LEADS & LEAD
 Route::group(['prefix' => 'leads'], function () {

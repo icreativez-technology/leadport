@@ -1254,7 +1254,6 @@ function urlResource($url = '') {
             $url = $url . '?' . request('resource_query');
         }
     }
-
     //return complete ur;
     return url($url);
 }

@@ -31,6 +31,7 @@ class Status {
         $modules = [
             'projects' => 'settings_modules_projects',
             'tasks' => 'settings_modules_tasks',
+            'orders' => 'settings_modules_orders',
             'invoices' => 'settings_modules_invoices',
             'payments' => 'settings_modules_payments',
             'knowledgebase' => 'settings_modules_knowledgebase',

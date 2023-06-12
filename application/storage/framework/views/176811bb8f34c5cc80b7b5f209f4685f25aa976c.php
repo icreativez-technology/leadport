@@ -8,7 +8,8 @@
 }
 </style>
 <!--heading-->
-<div class="x-heading p-t-10"><i class="mdi mdi-file-document-box"></i><?php echo e(cleanLang(__('lang.request_details'))); ?></div>
+
+<div class="x-heading p-t-10"><i class="mdi mdi-file-document-box"></i><?php echo e(cleanLang(__('lang.request_details'))); ?> <strong style='color:#00b388'> ( <?php echo e($task->send_to_docport  ? 'Convarted to Docport' : ' '); ?> )</strong></div>
 
 <!--Form Data-->
 <div class="card-show-form-data" id="card-task-organisation">
@@ -39,42 +40,58 @@
 </div>
     </span>
   </div>
+  <input type="hidden" name="task_custom_field_1" value="<?php echo e($task->task_custom_field_1); ?>">
 </div>
 <div class="form-row">
     <div class="form-group col-md-4">
     <span class="custom-text">Equipment : <strong><?php echo e($task->task_custom_field_2); ?></strong></span>
+    <input type="hidden" name="task_custom_field_2" value="<?php echo e($task->task_custom_field_2); ?>">
     </div>
     <div class="form-group col-md-4">
     <span class="custom-text">Load Type : <strong><?php echo e($task->task_custom_field_3); ?></strong></span>   
+    <input type="hidden" name="task_custom_field_3" value="<?php echo e($task->task_custom_field_3); ?>">
      </div>
      <div class="form-group col-md-4">
-    <span class="custom-text">Quantity : <strong><?php echo e($task->task_custom_field_4); ?></strong></span>   
+    <span class="custom-text">Quantity : <strong><?php echo e($task->task_custom_field_4); ?></strong></span>
+    <input type="hidden" name="task_custom_field_4" value="<?php echo e($task->task_custom_field_4); ?>">   
      </div>
   </div>
   <br />
   <div class="form-row">
     <div class="form-group col-sm-12">
     <span class="custom-text">Pickup : <strong><?php echo e($task->task_custom_field_7); ?></strong></span> 
+    <input type="hidden" name="task_custom_field_7" value="<?php echo e($task->task_custom_field_7); ?>">
     <hr>
-    <span class="custom-text">Country : <strong> <?php echo e($task->task_custom_field_5); ?></strong></span>   
-    <span class="custom-text">&nbsp;&nbsp;City : <strong> <?php echo e($task->task_custom_field_6); ?></strong></span>   
+    <span class="custom-text">Country : <strong> <?php echo e($task->task_custom_field_5); ?></strong></span> 
+    <input type="hidden" name="task_custom_field_5" value="<?php echo e($task->task_custom_field_5); ?>">  
+    <span class="custom-text">&nbsp;&nbsp;City : <strong> <?php echo e($task->task_custom_field_6); ?></strong></span>  
+    <input type="hidden" name="task_custom_field_6" value="<?php echo e($task->task_custom_field_6); ?>">
     <br />
     <br />
-    <span class="custom-text">Address : <strong><?php echo e($task->task_custom_field_8); ?></strong></span>   
+    <span class="custom-text">Address : <strong><?php echo e($task->task_custom_field_8); ?></strong></span> 
+    <input type="hidden" name="task_custom_field_8" value="<?php echo e($task->task_custom_field_8); ?>">  
     <span class="custom-text">&nbsp;&nbsp;index : <strong><?php echo e($task->task_custom_field_9); ?></strong></span> 
+    <input type="hidden" name="task_custom_field_9" value="<?php echo e($task->task_custom_field_9); ?>">  
     </div>
   </div>
   <br />
   <div class="form-row">
     <div class="form-group col-sm-12">
     <span class="custom-text">Delivery : <strong><?php echo e($task->task_custom_field_12); ?></strong></span> 
+    <input type="hidden" name="task_custom_field_12" value="<?php echo e($task->task_custom_field_12); ?>"> 
     <hr>
-    <span class="custom-text">Country : <strong><?php echo e($task->task_custom_field_10); ?></strong></span>   
-    <span class="custom-text">&nbsp;&nbsp;City : <strong> <?php echo e($task->task_custom_field_11); ?></strong></span>   
+    <span class="custom-text">Country : <strong><?php echo e($task->task_custom_field_10); ?></strong></span>  
+    <input type="hidden" name="task_custom_field_10" value="<?php echo e($task->task_custom_field_10); ?>">  
+    <span class="custom-text">&nbsp;&nbsp;City : <strong> <?php echo e($task->task_custom_field_11); ?></strong>
+    <input type="hidden" name="task_custom_field_11" value="<?php echo e($task->task_custom_field_11); ?>">  
+  </span>   
     <br />
     <br />
-    <span class="custom-text">Address : <strong><?php echo e($task->task_custom_field_13); ?></strong></span>   
-    <span class="custom-text">&nbsp;&nbsp;index : <strong><?php echo e($task->task_custom_field_14); ?></strong></span>  
+    <span class="custom-text">Address : <strong><?php echo e($task->task_custom_field_13); ?></strong></span>  
+    <input type="hidden" name="task_custom_field_13" value="<?php echo e($task->task_custom_field_13); ?>">   
+    <span class="custom-text">&nbsp;&nbsp;index : <strong><?php echo e($task->task_custom_field_14); ?></strong>
+    <input type="hidden" name="task_custom_field_14" value="<?php echo e($task->task_custom_field_14); ?>"> 
+    </span> 
     </div>
   </div>
   <br />
@@ -83,24 +100,41 @@
     <span class="custom-text">Addional Information</span> 
     <hr>
     <p><span class="custom-text">Incoterms location : <strong><?php echo e($task->task_custom_field_15); ?></strong></span> </p>
-    <span class="custom-text">ADR Carriage : <strong><?php echo e(($task->task_custom_field_18 == 'on') ? 'Yes' : 'No'); ?></strong></span>   
-    <span class="custom-text">&nbsp;&nbsp;UN code : <strong><?php echo e($task->task_custom_field_16); ?></strong></span>   
+    <input type="hidden" name="task_custom_field_15" value="<?php echo e($task->task_custom_field_15); ?>">
+    <span class="custom-text">ADR Carriage : <strong><?php echo e(($task->task_custom_field_18 == 'on') ? 'Yes' : 'No'); ?></strong>
+    <input type="hidden" name="task_custom_field_18" value="<?php echo e($task->task_custom_field_18); ?>">
+    </span>   
+    <span class="custom-text">&nbsp;&nbsp;UN code : <strong><?php echo e($task->task_custom_field_16); ?></strong>
+    <input type="hidden" name="task_custom_field_16" value="<?php echo e($task->task_custom_field_16); ?>">
+    </span>   
     <br />
     <br />
-    <span class="custom-text">Temperature Sensitive : <strong><?php echo e(($task->task_custom_field_19 == 'on') ? 'Yes' : 'No'); ?></strong></span>   
-    <span class="custom-text">&nbsp;&nbsp; Temperature range : <strong><?php echo e($task->task_custom_field_17); ?></strong></span> 
+    <span class="custom-text">Temperature Sensitive : <strong><?php echo e(($task->task_custom_field_19 == 'on') ? 'Yes' : 'No'); ?></strong>
+    <input type="hidden" name="task_custom_field_19" value="<?php echo e($task->task_custom_field_19); ?>">
+   </span>   
+    <span class="custom-text">&nbsp;&nbsp; Temperature range : <strong><?php echo e($task->task_custom_field_17); ?></strong>
+    <input type="hidden" name="task_custom_field_17" value="<?php echo e($task->task_custom_field_17); ?>">
+    </span> 
     </div>
     <div class="form-group col-sm-12">
-    <span class="custom-text">Fragile Carriage : <strong><?php echo e(($task->task_custom_field_20 == 'on') ? 'Yes' : 'No'); ?></strong></span>   
+    <span class="custom-text">Fragile Carriage : <strong><?php echo e(($task->task_custom_field_20 == 'on') ? 'Yes' : 'No'); ?></strong>
+    <input type="hidden" name="task_custom_field_20" value="<?php echo e($task->task_custom_field_20); ?>">
+  </span>   
     </div>
   <div class="form-group col-sm-12">
-    <span class="custom-text">Remarks : <strong><?php echo e($task->task_custom_field_21); ?></strong></span>   
+    <span class="custom-text">Remarks : <strong><?php echo e($task->task_custom_field_21); ?></strong>
+    <input type="hidden" name="task_custom_field_21" value="<?php echo e($task->task_custom_field_21); ?>">
+  </span>   
   </div>
   <div class="form-group col-md-6">
-    <span class="custom-text">Transport Price : <strong><?php echo e($task->task_custom_field_22); ?></strong></span>   
+    <span class="custom-text">Transport Price : <strong><?php echo e($task->task_custom_field_22); ?></strong>
+    <input type="hidden" name="task_custom_field_22" value="<?php echo e($task->task_custom_field_22); ?>">
+  </span>   
   </div>
   <div class="form-group col-md-6">
-    <span class="custom-text">Transit Time : <strong><?php echo e($task->task_custom_field_23); ?></strong></span>   
+    <span class="custom-text">Transit Time : <strong><?php echo e($task->task_custom_field_23); ?></strong>
+    <input type="hidden" name="task_custom_field_23" value="<?php echo e($task->task_custom_field_23); ?>">
+  </span>   
   </div>
   </div>
 <?php if($task->goods): ?>
@@ -122,11 +156,27 @@
 <br>
 <!--edit button-->
 <?php if(config('visibility.task_editing_buttons')): ?>
+<input type="hidden" name="title" value="<?php echo e($task->task_title); ?>">
+<input type="hidden" name="task_status" value="<?php echo e($task->task_status); ?>">
+<input type="hidden" name="task_clientid" value="<?php echo e($task->task_clientid); ?>">
+<input type="hidden" name="task_projectid" value="<?php echo e($task->task_projectid); ?>">
+<input type="hidden" name="task_creatorid" value="<?php echo e($task->task_creatorid); ?>">
+<input type="hidden" name="task_active_state" value="<?php echo e($task->task_active_state); ?>">
+<input type="hidden" name="task_visibility" value="<?php echo e($task->task_visibility); ?>">
+
 <div class="form-data-row-buttons">
-    <button type="button" class="btn waves-effect waves-light btn-xs btn-info ajax-request"
+    <button type="button" class="btn waves-effect waves-light btn-xs btn-info ajax-request float-left"
         data-url="<?php echo e(url('tasks/content/'.$task->task_id.'/edit-customfields')); ?>"
         data-loading-class="loading-before-centre"
         data-loading-target="card-tasks-left-panel"><?php echo app('translator')->get('lang.edit'); ?></button>
+        <button type="button" <?php if ($task->send_to_docport == 1){ ?> disabled <?php   } ?> class="btn btn-danger btn-xs ajax-request float-right"
+            data-loading-target="card-tasks-left-panel"
+            data-loading-class="loading-before-centre"
+            data-url="<?php echo e(url('/tasks/content/'.$task->task_id.'/sendToDocport')); ?>" data-type="form" data-ajax-type="post"
+            data-form-id="card-task-organisation">
+            <?php echo e(cleanLang(__('lang.send_to_docport'))); ?>
+
+        </button>
 </div>
 <?php endif; ?>
 

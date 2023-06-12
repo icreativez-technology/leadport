@@ -34,6 +34,7 @@ class Visibility {
         $this->viewUsers();
         $this->viewInvoices();
         $this->viewTasks();
+        $this->viewOrders();
         $this->viewLeads();
         $this->viewPayments();
         $this->viewEstimates();
@@ -121,6 +122,26 @@ class Visibility {
         if (auth()->user()->is_client) {
             if (config('modules.tasks')) {
                 config(['visibility.modules.tasks' => true]);
+            }
+        }
+
+    }
+
+    public function viewOrders() {
+
+        //team
+        if (auth()->user()->is_team) {
+            if (auth()->user()->role->role_tasks >= 1) {
+                if (config('modules.orders') && config('modules.projects')) {
+                    config(['visibility.modules.orders' => true]);
+                }
+            }
+        }
+
+        //client
+        if (auth()->user()->is_client) {
+            if (config('modules.orders')) {
+                config(['visibility.modules.orders' => true]);
             }
         }
 

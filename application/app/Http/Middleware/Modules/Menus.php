@@ -332,6 +332,10 @@ class Menus {
                 'state' => false,
                 'data' => [],
             ],
+            'orders_actions' => [
+                'state' => false,
+                'data' => [],
+            ],
             'leads_actions' => [
                 'state' => false,
                 'data' => [],

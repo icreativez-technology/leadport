@@ -14,15 +14,15 @@
     <?php $__currentLoopData = $task->goods; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $good): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
     <tr>
                 <td><?php echo e($good->qty); ?></td>
-                <td><?php echo e($good->units); ?></td>
-                <td><?php echo e($good->kg_calc); ?></td>
+                <td><?php echo e($good->unitid); ?></td>
+                <td><?php echo e($good->kgcalc); ?></td>
                 <td><?php echo e($good->ldm); ?></td>
                 <td><?php echo e($good->value); ?></td>
                 <td><?php echo e($good->description); ?></td>
-                <td><?php echo e($good->volume); ?></td>
-                <td><?php echo e($good->length); ?></td>
-                <td><?php echo e($good->width); ?></td>
-                <td><?php echo e($good->height); ?></td>
+                <td><?php echo e($good->volumem3); ?></td>
+                <td><?php echo e($good->lengthcm); ?></td>
+                <td><?php echo e($good->widthcm); ?></td>
+                <td><?php echo e($good->heightcm); ?></td>
     </tr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </table><?php /**PATH E:\xampp\htdocs\livesoft\leadport\application\resources\views/misc/goods.blade.php ENDPATH**/ ?>

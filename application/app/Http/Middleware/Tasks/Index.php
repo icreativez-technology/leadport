@@ -48,7 +48,6 @@ class Index {
      * @return mixed
      */
     public function handle($request, Closure $next) {
-
         //validate module status
         if (!config('visibility.modules.tasks')) {
             abort(404, __('lang.the_requested_service_not_found'));
